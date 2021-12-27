@@ -28,6 +28,7 @@ public class DatabaseController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/databases")
     public ResponseEntity<List<DatabaseData>> getDatabases() {
+        System.out.println("GOT IT GOT IT GOT IT");
         List<Database> databases = databaseService.getDatabases();
         List<DatabaseData> databasesData = databases.stream().map(DatabaseData::from).collect(Collectors.toList());
         return ResponseEntity.ok(databasesData);
